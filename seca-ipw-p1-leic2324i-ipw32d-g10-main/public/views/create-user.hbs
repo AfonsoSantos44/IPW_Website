@@ -1,0 +1,70 @@
+<div class="container-fluid create-user-container">
+    <div class="create-user-form">
+<h1 class="mb-4">Create User</h1>
+<form id="create-user-form">
+    <label for="new-user-username" class="sr-only">Username:</label>
+    <input type="text" id="new-user-username" name="new-user-username" class="form-control" placeholder=" New Username" required>
+    <br>
+    <label for="new-user-password" class="sr-only" >Password:</label>
+    <input type="password" id="new-user-password" name="new-user-password" class="form-control" placeholder="New Password" required>
+    <br>
+    <button type="submit" class="btn btn-primary btn-block" id="submit-create-user">Create User</button>
+    <button type="reset" class="btn btn-secondary btn-block" id="reset-return-to-login">Return to login</button>
+</form>
+    </div>
+</div>
+<style>
+    .create-user-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 100vh;
+        margin: 0;
+        background: url('../login-background.jpg') center/cover fixed no-repeat;
+    }
+
+    .create-user-form {
+        text-align: center;
+        background-color: #f8f9fa; /* Light gray background color */
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        width: 100%;
+    }
+
+    .login-form h1 {
+        margin-bottom: 20px;
+        color: #343a40; /* Dark gray text color */
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-control {
+        border-radius: 25px;
+        background-color: #e9ecef; /* Light gray input background color */
+        color: #495057; /* Dark gray input text color */
+    }
+
+    .btn {
+        border-radius: 25px;
+        cursor: pointer;
+    }
+
+    .btn-primary {
+        background-color: #007bff; /* Primary button color */
+        color: #fff; /* White text color */
+    }
+
+    .btn-secondary {
+        background-color: #6c757d; /* Secondary button color */
+        color: #fff; /* White text color */
+    }
+
+    .btn:hover {
+        opacity: 0.9;
+    }
+</style>

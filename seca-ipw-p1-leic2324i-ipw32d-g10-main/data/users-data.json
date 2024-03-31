@@ -1,0 +1,22 @@
+{
+  "testUser": {
+    "username": "testUser",
+    "UUID": "19a79f36-5f2f-453c-93f8-4e19314a666b"
+  },
+  "testuser": {
+    "username": "testuser",
+    "UUID": "9022746f-e9fa-45c3-bc4c-cc398b17b4d5"
+  },
+  "testUSER": {
+    "username": "testUSER",
+    "UUID": "9d4621b1-2c32-4a3c-a851-1f1f393ea740"
+  },
+  "johnDOE": {
+    "username": "johnDOE",
+    "UUID": "0eb24984-e143-45ac-aedc-45e4e06e550d"
+  },
+  "johnDOe": {
+    "username": "johnDOe",
+    "UUID": "a1687938-f23e-4f4f-89e6-429323c03c42"
+  }
+}

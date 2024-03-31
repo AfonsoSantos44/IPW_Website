@@ -1,0 +1,97 @@
+<div class="main-page-container">
+    <h1 class="mt-4">Seca Website</h1>
+
+    <button class="btn btn-primary" id="list-group-button">List Groups</button>
+    <button class="btn btn-success" id="create-group-button">Create Group</button>
+    <button class="btn btn-warning" id="edit-groups-button">Edit Groups</button>
+    <button class="btn btn-danger" id="delete-group-button">Delete Group</button>
+    <button class="btn btn-secondary" id="logout-button">Logout</button>
+
+    <div class="topnav">
+        <form id="search-event-form">
+            <div class="form-group">
+                <label for="search-event">
+                    <input type="text" class="form-control" id="search-event-name" name="search-event-name"
+                           placeholder="Search an event">
+                    <button type="submit" class="btn btn-info" id="search-event-button">Search</button>
+                </label>
+            </div>
+        </form>
+    </div>
+
+    <div id="search-group" style="display: none; margin-top: 10px;">
+        <form id="search-group-form">
+            <div class="form-group">
+                <label for="search-groups">Search for a group:</label>
+                <input type="text" class="form-control" id="search-groups" name="search-group-name"
+                       placeholder="Type to search" style="width: 150px;">
+            </div>
+            <button type="submit" class="btn btn-info" id="search-groups-button">Search</button>
+            <button type="submit" class="btn btn-primary" id="add-event-to-group-button">Add event</button>
+        </form>
+    </div>
+
+
+    <div id="available-groups">
+    </div>
+
+    <h3>Popular events:</h3>
+    <ul id="popular-events-list" class="list-group">
+        {{#each events}}
+            <li class="popular-event-item list-group-item">
+                <button class="event-name btn btn-light" data-event-id="{{id}}" id="event-info-button">{{name}}</button>
+                <button class="event-button btn btn-success" data-event-id="{{id}}"
+                        id="add-event-to-group-button-plus">+</button>
+            </li>
+        {{/each}}
+    </ul>
+</div>
+
+
+<div id="available-groups">
+</div>
+
+<style>
+    body {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        background: lightgray;
+    }
+
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        width: 100%;
+        background: white;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .popular-event-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    .event-name {
+        flex-grow: 1;
+        margin-right: 10px;
+    }
+
+    #search-group {
+        display: none;
+        align-items: center;
+        margin-bottom: 10px;
+        margin-left: auto;
+    }
+
+    #search-groups {
+        margin-right: 10px;
+        width: 150px;
+    }
+</style>
+
+

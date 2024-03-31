@@ -1,0 +1,18 @@
+{
+  "name": "seca-ipw-p1-leic2324i-ipw32d-g13",
+  "version": "1.0.0",
+  "test": "mocha",
+  "dependencies": {
+    "chai": "^4.3.10",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "handlebars": "^4.7.8",
+    "mocha": "^10.2.0",
+    "node-fetch": "^3.3.2",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "@elastic/elasticsearch": "^8.10.0"
+  }
+}

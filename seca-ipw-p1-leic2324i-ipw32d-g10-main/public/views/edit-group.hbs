@@ -1,0 +1,66 @@
+<form id="edit-group-form">
+    <h1>Edit Group</h1>
+    <label for="edit-group-name">Group Name:</label>
+    <input type="text" class="form-control" id="edit-group-name" name="edit-group-name" required>
+    <label for="edit-new-group-name">New Name:</label>
+    <input type="text" class="form-control" id="edit-new-group-name" name="edit-new-group-name">
+    <label for="edit-new-group-description">Group Description:</label>
+    <input type="text" class="form-control" id="edit-new-group-description" name="edit-new-group-description" required>
+    <button type="submit" class="btn btn-primary" id="submit-edit-group">Edit Group</button>
+    <button type="reset" class="btn btn-secondary" id="edit-group-to-main">Return to Main Page</button>
+</form>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: lightgray;
+    }
+
+    form {
+        width: 300px;
+        padding: 20px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+    }
+
+    input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 16px;
+        border: 1px solid #ced4da;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    button[type="reset"] {
+        background-color: #6c757d;
+        margin-top: 10px;
+    }
+</style>

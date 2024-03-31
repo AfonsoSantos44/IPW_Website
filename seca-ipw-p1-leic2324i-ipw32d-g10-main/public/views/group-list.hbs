@@ -1,0 +1,57 @@
+<div class="list-group-container">
+    <h1 class="mt-4">Existing Groups:</h1>
+    <ul id="existing-groups-list" class="list-group">
+        <li class="list-group-item">
+            <button type="reset" class="btn btn-primary" id="group-details-to-main">Return to Main Page</button>
+        </li>
+        {{#each groups}}
+            <li class="list-group-item existing-group-item">
+                <h2 class="group-name">{{name}}</h2>
+                <button class="btn btn-info view-details-button" data-group-name="{{name}}"
+                        data-toggle-id="group-details-{{name}}">View Details</button>
+
+                <div id="group-details-{{name}}" class="group-details" style="display: none;">
+                    <h3>Name: {{name}}</h3>
+                    <p>Description: {{description}}</p>
+                    <h4>Events:</h4>
+                    <ul class="list-group">
+                        {{#each events}}
+                            <li class="list-group-item group-events-item">
+                                <strong class="event-name">{{name}}</strong>
+                                <button class="btn btn-danger event-button" data-event-id="{{id}}"
+                                        data-group-name="{{../name}}" id="remove-event-from-group-button-minus">-</button>
+                                {{#if genre}} | Genre: {{genre}}{{/if}}
+                            </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </li>
+        {{/each}}
+    </ul>
+</div>
+
+
+<style>
+    body {
+        margin-top: 20px;
+        background: lightgray;
+    }
+
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+
+    .existing-group-item {
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        padding: 10px;
+    }
+
+    .group-details {
+        margin-top: 10px;
+        border: 1px solid #ddd;
+        padding: 10px;
+    }
+</style>

@@ -1,0 +1,163 @@
+{
+  "19a79f36-5f2f-453c-93f8-4e19314a666b": {
+    "groups": [
+      {
+        "name": "group2",
+        "description": "group's description",
+        "events": []
+      },
+      {
+        "name": "group3",
+        "description": "group's description",
+        "events": []
+      },
+      {
+        "name": "newName",
+        "description": "newDescription",
+        "events": []
+      },
+      {
+        "name": "group1",
+        "description": "group's description",
+        "events": []
+      }
+    ]
+  },
+  "6c420969-b23b-4a50-9408-80a150d6b786": {
+    "groups": [
+      {
+        "name": "groupName",
+        "description": "groupDescription",
+        "events": []
+      }
+    ]
+  },
+  "769fe632-a0ea-442c-8f7a-337c22417352": {
+    "groups": [
+      {
+        "name": "groupName",
+        "description": "groupDescription",
+        "events": []
+      }
+    ]
+  },
+  "8c461884-02bb-4442-8e52-ca74bdea3c76": {
+    "groups": []
+  },
+  "c812a856-155b-48bd-baa7-7d32ff500ad8": {
+    "groups": []
+  },
+  "6b732cfb-d424-4de8-915f-1266dd8868bc": {
+    "groups": []
+  },
+  "b5250452-f843-4c76-9693-2466164dd1fd": {
+    "groups": [
+      {
+        "name": "newGroupName",
+        "description": "newGroupDescription",
+        "events": []
+      }
+    ]
+  },
+  "7f0fde94-c55d-4c40-8f37-f2d8e4fbbff7": {
+    "groups": [
+      {
+        "name": "groupName",
+        "description": "groupDescription",
+        "events": []
+      }
+    ]
+  },
+  "a80035ab-7014-460f-baf1-2aac210e1397": {
+    "groups": [
+      {
+        "name": "groupName",
+        "description": "groupDescription",
+        "events": []
+      }
+    ]
+  },
+  "f967e7c5-c7c9-4727-91d4-71f772f59f6d": {
+    "groups": [
+      {
+        "name": "groupName",
+        "description": "groupDescription",
+        "events": [
+          {
+            "id": "G5v0Z9Yc3P8Mr",
+            "name": "Phoenix Suns vs. Milwaukee Bucks",
+            "segment": null,
+            "genre": null
+          }
+        ]
+      }
+    ]
+  },
+  "4e5d08b6-4724-4ac4-9712-59862add406e": {
+    "groups": [
+      {
+        "name": "groupName",
+        "description": "groupDescription",
+        "events": []
+      }
+    ]
+  },
+  "f1bd4d1b-bfc9-4f17-b6c1-0faed463e24a": {
+    "groups": [
+      {
+        "name": "newGroupName",
+        "description": "newGroupDescription",
+        "events": []
+      },
+      {
+        "name": "groupName",
+        "description": "groupDescription",
+        "events": []
+      },
+      {
+        "name": "groupName",
+        "description": "groupDescription",
+        "events": []
+      },
+      {
+        "name": "groupName",
+        "description": "groupDescription",
+        "events": []
+      },
+      {
+        "name": "groupName",
+        "description": "groupDescription",
+        "events": []
+      }
+    ]
+  },
+  "9d4621b1-2c32-4a3c-a851-1f1f393ea740": {
+    "groups": [
+      {
+        "name": "newGroupName",
+        "description": "newGroupDescription",
+        "events": []
+      },
+      {
+        "name": "groupName",
+        "description": "groupDescription",
+        "events": []
+      },
+      {
+        "name": "groupName",
+        "description": "groupDescription",
+        "events": []
+      },
+      {
+        "name": "groupName",
+        "description": "groupDescription",
+        "events": []
+      },
+      {
+        "name": "groupName",
+        "description": "groupDescription",
+        "events": []
+      }
+    ]
+  }
+}

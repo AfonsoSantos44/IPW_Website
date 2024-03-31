@@ -1,0 +1,438 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: 'docs/seca-api-spec'
+  description: 'Get a list of most popular events'
+  contact:
+    name: IPW API
+    url: 'https://github.com/isel-leic-ipw/2324i-IPW-LEIC31D/wiki/IPW_IP-2324-1-A2'
+    email: 'A50484@alunos.isel.pt, A50497@alunos.isel.pt'
+
+servers:
+  - url: 'http://localhost:3000'
+
+paths:
+  /api/events/search:
+    get:
+      summary: Search events
+      description: Retrieve events based on search criteria.
+      parameters:
+        - name: size
+          in: query
+          description:
+            Number of events to retrieve, default is 30
+          schema:
+            type: string
+        - name: page
+          in: query
+          description:
+            Page number, default is 1
+          schema:
+            type: string
+        - name: keyword
+          in: query
+          description: Keyword for event search
+          schema:
+            type: string
+      responses:
+        '201':
+          description: Successful response
+          content:
+            application/json:
+              example:
+                - event1
+                - event2
+        '400':
+          description: Error fetching data from API
+          content:
+            application/json:
+              example:
+                error: Error fetching data from API
+
+  /api/users/create:
+    post:
+      summary: Creates a new User
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                  description: The username of the user
+                password:
+                    type: string
+                    description: The password of the user
+              required:
+                - username
+                - password
+      responses:
+        '201':
+          description: User created
+          content:
+            application/json:
+              example:
+                message: User created successfully
+                bearerToken: '1a715a41-3a53-48ab-ab47-0acdc9248a48'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              example:
+                error: Error creating user
+
+  /api/events/popular-events:
+    get:
+      summary: Get Popular Events
+      description: Retrieve a list of popular events.
+      parameters:
+        - name: size
+          in: query
+          description:
+            Number of events to retrieve, default is 30
+          schema:
+            type: string
+        - name: page
+          in: query
+          description:
+            Page number, default is 1
+          schema:
+            type: string
+      responses:
+        '201':
+          description: Successful response
+          content:
+            application/json:
+              example:
+                - event1
+                - event2
+        '400':
+          description: Error fetching data from API
+          content:
+            application/json:
+              example:
+                error: Error fetching data from API
+
+  /api/groups/create:
+    post:
+      summary: Add a Group
+      description: Add a new group to the user's groups.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: Group name
+                description:
+                  type: string
+                  description: Group description
+              required:
+                - name
+                - description
+      security:
+        - Token: [ ]
+      responses:
+        '200':
+          description: Group created successfully
+          content:
+            application/json:
+              example:
+                message: Group created
+        '400':
+          description: Bad request or missing parameters
+          content:
+            application/json:
+              example:
+                error: Name and description are required
+        '401':
+          description: Unauthorized - Token missing or invalid
+          content:
+            application/json:
+              example:
+                error: Unauthorized
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              example:
+                error: Internal Server Error
+
+  /api/groups/delete:
+    post:
+      summary: Delete a Group
+      description: Delete a group from the user's groups.
+      parameters:
+        - name: name
+          in: query
+          description: Group name to delete
+          schema:
+            type: string
+            example: GroupName
+      security:
+        - Token: []
+      responses:
+        '200':
+          description: Group deleted successfully
+          content:
+            application/json:
+              example:
+                message: Group deleted
+        '400':
+          description: Bad request or missing parameters
+          content:
+            application/json:
+              example:
+                error: Group name and UUID are required
+        '401':
+          description: Unauthorized - Token missing or invalid
+          content:
+            application/json:
+              example:
+                error: Unauthorized
+        '404':
+          description: Group not found
+          content:
+            application/json:
+              example:
+                error: Group not found
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              example:
+                error: Internal Server Error
+
+  /api/groups/edit:
+    post:
+      summary: Edit a group by name
+      parameters:
+        - in: query
+          name: name
+          required: true
+          schema:
+            type: string
+            description: The name of the group that is being edited
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: The new name of the group
+                description:
+                  type: string
+                  description: The new description of the group
+              required:
+                - name
+                - description
+      security:
+        - Token: [ ]
+      responses:
+        '201':
+          description: Group edited successfully
+          content:
+            application/json:
+              example:
+                message: Group edited
+        '400':
+          description: Group not found
+          content:
+            application/json:
+              example:
+                error: Group not found
+
+  /api/groups/details:
+    get:
+      summary: Get details of a group by name
+      parameters:
+        - in: query
+          name:  name
+          required: true
+          schema:
+            type: string
+            description: The name of the group to retrieve details for
+      security:
+        - Token: [ ]
+      responses:
+        '201':
+          description: Group details retrieved successfully
+          content:
+            application/json:
+              example:
+                name: GroupName
+                description: GroupDescription
+                events:
+                  - name: Wii Theme
+                    date: '2023-10-07'
+                    segment: Music
+                    genre: Bossa Nova
+                  - name: After Dark X Sweater Weather
+                    date: '2023-10-07'
+                    segment: Music
+                    genre: Hardstyle
+        '400':
+          description: Group not found
+          content:
+            application/json:
+              example:
+                error: Group not found
+
+  /api/groups/add-event:
+    post:
+      summary: Add an event to a group
+      security:
+        - Token: [ ]
+      parameters:
+        - in: query
+          name: name
+          required: true
+          schema:
+            type: string
+            description: The name of the group to add the event to
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                eventId:
+                  type: integer
+                  description: The ID of the event to be added to the group
+      responses:
+        '201':
+          description: Event added to the group successfully
+          content:
+            application/json:
+              example:
+                message: Event added successfully
+        '400':
+          description: Error adding event to the group
+          content:
+            application/json:
+              example:
+                error: Error adding event to the group
+
+  /api/groups/remove-event:
+    post:
+      summary: Remove an event from a group
+      parameters:
+        - in: query
+          name: name
+          required: true
+          schema:
+            type: string
+            description: The name of the group to remove the event from
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                eventId:
+                  type: integer
+                  description: The ID of the event to be removed from the group
+      security:
+        - Token: [ ]
+      responses:
+        '201':
+          description: Event removed from the group successfully
+          content:
+            application/json:
+              example:
+                message: Event removed successfully
+        '400':
+          description: Error removing event from the group
+          content:
+            application/json:
+              example:
+                error: Error removing event from the group
+
+  /api/users/token:
+    get:
+      summary: Get user token by username
+      parameters:
+        - in: query
+          name: username
+          required: true
+          schema:
+            type: string
+            description: The username for which to retrieve the token
+      responses:
+        '201':
+          description: Token retrieved successfully
+          content:
+            application/json:
+              example:
+                token: <user_token>
+        '400':
+          description: Error fetching token
+          content:
+            application/json:
+              example:
+                error: Error fetching token
+
+  /api/groups/list:
+    get:
+      summary: List groups
+      security:
+        - Token: [ ]
+      responses:
+        '201':
+          description: Groups listed successfully
+          content:
+            application/json:
+              example:
+                - name: GroupName1
+                  description: GroupDescription1
+                  members: 10
+                - name: GroupName2
+                  description: GroupDescription2
+                  members: 15
+        '400':
+          description: Error listing groups
+          content:
+            application/json:
+              example:
+                error: Error listing groups
+
+  /api/users/authenticate:
+    post:
+      summary: Authenticate user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                  description: The username for authentication
+                password:
+                  type: string
+                  description: The password for authentication
+      responses:
+        '201':
+          description: User authenticated successfully
+          content:
+            application/json:
+              example:
+                message: User authenticated
+                UUID: <user_UUID>
+        '400':
+          description: Error authenticating user
+          content:
+            application/json:
+              example:
+                error: Error authenticating user

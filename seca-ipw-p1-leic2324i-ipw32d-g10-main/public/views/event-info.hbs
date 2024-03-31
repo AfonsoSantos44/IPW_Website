@@ -1,0 +1,85 @@
+
+<header>
+    <h1>Event Info</h1>
+</header>
+
+<section>
+    <article>
+        <h3>Event Name:</h3>
+        <p>{{name}}</p>
+    </article>
+
+    <article>
+        <h3>Sales start:</h3>
+        <p>{{salesStart}}</p>
+    </article>
+
+    <article>
+        <h3>Sales end:</h3>
+        <p>{{salesEnd}}</p>
+    </article>
+
+    <article>
+        <h3>Event date:</h3>
+        <p>{{eventStart}}</p>
+    </article>
+
+    <article>
+        <h3>Segment:</h3>
+        <p>{{segment}}</p>
+    </article>
+
+    <article>
+        <h3>Genre:</h3>
+        <p>{{genre}}</p>
+    </article>
+
+    <article>
+        <h3>subGenre:</h3>
+        <p>{{subGenre}}</p>
+    </article>
+
+    <!-- Return to Main Page button -->
+    <button class="btn btn-secondary return-button" id="event-info-to-main">Return to Main Page</button>
+</section>
+
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        background: url({{image}});
+    }
+
+    header {
+        background: #343a40;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+
+    section {
+        max-width: 600px;
+        margin: 20px auto;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+    }
+
+    article {
+        margin-bottom: 20px;
+    }
+
+    h3 {
+        color: #343a40;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    .return-button {
+        margin-top: 20px;
+    }
+</style>
